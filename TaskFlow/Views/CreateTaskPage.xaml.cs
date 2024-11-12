@@ -14,6 +14,7 @@ public partial class CreateTaskPage : ContentPage
 		InitializeComponent();
         _db = new DatabaseService();
         _user = user;
+
     }
 
     private void OnCreateClicked(object sender, EventArgs e)
@@ -21,18 +22,21 @@ public partial class CreateTaskPage : ContentPage
         var title = TitleEntry.Text;
         var description = DescriptionEditor.Text;
 
+        // Validasi title
         if (string.IsNullOrWhiteSpace(title))
         {
             DisplayAlert("Error", "Title is required", "OK");
             return;
         }
 
+
+
         var task = new TaskItem
         {
             Title = title,
             Description = description,
             IsCompleted = false,
-            UserId = _user.Id
+            UserId = _user.Id,
         };
 
         _db.TaskItems.Add(task);

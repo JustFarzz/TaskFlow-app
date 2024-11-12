@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace TaskFlow.Models
 {
@@ -16,7 +16,9 @@ namespace TaskFlow.Models
 
         public bool IsCompleted { get; set; }
 
-        public string Status { get; set; } = "uncompleted"; //defaultnya
+        public string Status { get; set; } = "uncompleted"; // Defaultnya
+
+        public bool IsDeleted { get; set; } = false; // Properti untuk menandakan apakah tugas dihapus
 
         [ForeignKey("User")]
         public Guid UserId { get; set; }

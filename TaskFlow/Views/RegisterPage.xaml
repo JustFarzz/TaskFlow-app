@@ -1,13 +1,110 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskFlow.Views.RegisterPage"
-             Title="RegisterPage">
+             BackgroundColor="#1e1e1e">
 
-    <StackLayout Padding="30" Spacing="10">
-        <Entry x:Name="UsernameEntry" Placeholder="Username" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Button Text="Register" Clicked="OnRegisterClicked" />
-    </StackLayout>
-    
+    <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
+        <!-- Background Image -->
+        <Image Source="work.jpg" 
+               Aspect="AspectFill" 
+               Opacity="0.6" 
+               VerticalOptions="FillAndExpand" 
+               HorizontalOptions="FillAndExpand" />
+
+        <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="CenterAndExpand">
+            <!-- StackLayout for Header and Input Fields -->
+            <StackLayout Spacing="15">
+                <!-- Header Section -->
+                <Label Text="Create new account"
+                       FontSize="32"
+                       FontFamily="MovistarTextRegular.ttf"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Start" />
+
+                <Label Text="Get started by creating your account, it only takes less than a minute."
+                       FontSize="14"
+                       TextColor="LightGray"
+                       HorizontalOptions="Start" />
+
+                <!-- Input Fields -->
+                <Frame CornerRadius="18" Padding="10, 0, 0, 0" HasShadow="True" BackgroundColor="White" WidthRequest="500" HorizontalOptions="StartAndExpand">
+                    <Entry x:Name="UsernameEntry" 
+                           Placeholder="Username" 
+                           BackgroundColor="White" 
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"
+                           HeightRequest="35"
+                           HorizontalOptions="FillAndExpand"/>
+                </Frame>
+
+                <Frame CornerRadius="18" Padding="10, 0, 0, 0" HasShadow="True" BackgroundColor="White" WidthRequest="500" HorizontalOptions="StartAndExpand">
+                    <Entry x:Name="EmailEntry" 
+                           Placeholder="Email" 
+                           BackgroundColor="White" 
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"
+                           HeightRequest="35"
+                           HorizontalOptions="FillAndExpand"/>
+                </Frame>
+
+                <Frame CornerRadius="18" Padding="10, 0, 0, 0" HasShadow="True" BackgroundColor="WhiteSmoke" WidthRequest="500" HorizontalOptions="StartAndExpand">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry x:Name="PasswordEntry" 
+                               Placeholder="Password" 
+                               IsPassword="True"
+                               BackgroundColor="WhiteSmoke" 
+                               TextColor="Black"
+                               PlaceholderColor="DarkGray"
+                               HeightRequest="35"
+                               WidthRequest="450"
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <ImageButton Source="eye_close.png" 
+                                     x:Name="ShowPasswordButton"
+                                     HeightRequest="20" 
+                                     WidthRequest="20"
+                                     Padding="10"
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnShowPasswordClick"
+                                     Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+
+                <!--<Frame CornerRadius="18" Padding="10, 0, 0, 0" HasShadow="True" BackgroundColor="WhiteSmoke" WidthRequest="500" HorizontalOptions="StartAndExpand">
+                    <Entry x:Name="ConfirmPasswordEntry" 
+                           Placeholder="Confirm Password" 
+                           IsPassword="True"
+                           BackgroundColor="WhiteSmoke" 
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"
+                           HeightRequest="35"
+                           HorizontalOptions="FillAndExpand"/>
+                </Frame>-->
+
+                <!-- Action Buttons -->
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+
+
+                    <Button Text="Create account"
+                            BackgroundColor="#3b82f6"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Padding="10,5"
+                            WidthRequest="225"
+                            Clicked="OnRegisterClicked" />
+                    
+                    <Label Text="Already have an account?" VerticalOptions="Center" />
+
+
+                    <Label Text="Log In" VerticalOptions="Center" TextColor="DeepSkyBlue" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnKeLogin"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

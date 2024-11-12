@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskFlow.Views.TrashPage"
+             xmlns:models="clr-namespace:TaskFlow.Models">
+    
+    <StackLayout Padding="10" BackgroundColor="AliceBlue" HeightRequest="830">
+        <Label Text="Trash Page" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20"/>
+        <SearchBar TextChanged="OnSearchBarTextChanged" Placeholder="Search tasks..." BackgroundColor="White" TextColor="Gray" WidthRequest="450" HorizontalOptions="StartAndExpand"
+                   Margin="7,0,0,5"/>
+        <ListView x:Name="TrashTasksListView" HasUnevenRows="True" ItemSelected="OnTaskSelected" ItemsSource="{Binding DeletedTask}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="5" BackgroundColor="SandyBrown">
+                            <StackLayout Orientation="Vertical" Spacing="5" BackgroundColor="SandyBrown">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium" />
+                                <Label Text="{Binding Description}" FontSize="Small" TextColor="Gray" />
+                                <Label Text="{Binding Status}" FontSize="Small" TextColor="Red" />
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                    <Frame BorderColor="White" CornerRadius="20" Padding="0">
+                                        <Button Text="{x:Static models:icon.RotateLeft}" Clicked="OnRestoreClicked" FontFamily="FontAwesome" CommandParameter="{Binding}" BackgroundColor="SandyBrown" TextColor="White" BorderColor="White"/>
+                                    </Frame>
+
+                                    <Frame BorderColor="White" CornerRadius="20" Padding="0">
+                                        <Button Text="{x:Static models:icon.Trash}" Clicked="OnDeletePermanentlyClicked" FontFamily="FontAwesome" CommandParameter="{Binding}" Background="SandyBrown" TextColor="White" BorderColor="White" />
+                                    </Frame>
+              
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

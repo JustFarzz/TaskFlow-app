@@ -10,7 +10,12 @@ namespace TaskFlow
 
             MainPage = new NavigationPage(new LoginPage());
 
-            //MainPage = new AppShell();
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+            {
+#if WINDOWS
+    handler.PlatformView.BorderThickness = new Microsoft.UI.Xaml.Thickness(0);
+#endif
+            });
         }
     }
 }

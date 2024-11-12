@@ -11,7 +11,7 @@ namespace TaskFlow.Services
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Host=localhost;Port=5432;Database=aplikasi_taskflow;Username=postgres;Password=projectsready";
+            var connectionString = "Host=202.10.42.56;Port=5432;Database=aplikasi_taskflow;Username=postgres;Password=projects";
             optionsBuilder.UseNpgsql(connectionString);
         }
 

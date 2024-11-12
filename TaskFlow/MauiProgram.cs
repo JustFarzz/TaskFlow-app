@@ -13,6 +13,9 @@ namespace TaskFlow
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("MovistarTextRegular.ttf", "MovistarTextRegular");
+                    fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
+                    fonts.AddFont("BebasNeueRegular400.ttf", "NeueBebas");
                 });
 
 #if DEBUG

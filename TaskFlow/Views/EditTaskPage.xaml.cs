@@ -19,7 +19,12 @@ public partial class EditTaskPage : ContentPage
 
 		TitleEntry.Text = _task.Title;
 		DescriptionEditor.Text = _task.Description;
-	}
+
+        CategoryPicker.Items.Add("Personal");
+        CategoryPicker.Items.Add("Work");
+        CategoryPicker.Items.Add("Optional");
+
+    }
 
 	private async void OnSaveClicked(object sender, EventArgs e)
 	{

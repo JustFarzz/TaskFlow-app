@@ -4,15 +4,41 @@
              x:Class="TaskFlow.Views.EditTaskPage"
              Title="EditTaskPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
-        <StackLayout Padding="30" Spacing="10">
-            <Label Text="Edit Task" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" />
+        <StackLayout Padding="30" Spacing="10" Background="AliceBlue">
+            <Label Text="Edit Task" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" />
 
-            <Entry x:Name="TitleEntry" Placeholder="Task Title" />
-            <Editor x:Name="DescriptionEditor" Placeholder="Task Description" HeightRequest="100" />
+            <Entry x:Name="TitleEntry" Placeholder="Task Title" BackgroundColor="White" TextColor="Black"/>
+            <Editor x:Name="DescriptionEditor" Placeholder="Task Description" HeightRequest="100" BackgroundColor="White" TextColor="Black" />
 
-            <Button Text="Save" Clicked="OnSaveClicked" />
-            <Button Text="Cancel" Clicked="OnCancelClicked" />
+            <Entry x:Name="LinkEntry" Placeholder="Add Link (optional)" WidthRequest="350" Keyboard="Url" HorizontalOptions="StartAndExpand" BackgroundColor="White" TextColor="Black"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+                <Button Text="Attach File" WidthRequest="100" BackgroundColor="Gray" TextColor="White"/>
+                <Label Text="No file selected" x:Name="AttachmentLabel" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Black"/>
+            </StackLayout>
+
+            <Picker x:Name="CategoryPicker" Title="Select Category" TitleColor="Black" WidthRequest="350" HorizontalOptions="Start" TextColor="Black" BackgroundColor="White">
+
+            </Picker>
+
+            <Label Text="Deadline" TextColor="Black"/>
+            <DatePicker x:Name="DeadlinePicker" WidthRequest="350" HorizontalOptions="StartAndExpand" BackgroundColor="White" TextColor="Black"/>
+            <Button Text="Save" Clicked="OnSaveClicked" BackgroundColor="White" WidthRequest="500"/>
+            <Button Text="Cancel" Clicked="OnCancelClicked" BackgroundColor="White" WidthRequest="500" />
         </StackLayout>
     </ScrollView>
     

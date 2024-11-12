@@ -1,12 +1,104 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\porto\\new_Journey\\TaskFlow\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\Project\\TaskFlow\\TaskFlow-app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|d:\\project\\taskflow\\taskflow-app\\taskflow\\views\\edittaskpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\views\\edittaskpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|d:\\project\\taskflow\\taskflow-app\\taskflow\\views\\trashpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\views\\trashpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|d:\\project\\taskflow\\taskflow-app\\taskflow\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|d:\\project\\taskflow\\taskflow-app\\taskflow\\views\\edittaskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\views\\edittaskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|d:\\project\\taskflow\\taskflow-app\\taskflow\\models\\icon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7AF6DE-743E-4846-948D-979FE77B5C94}|TaskFlow\\TaskFlow.csproj|solutionrelative:taskflow\\models\\icon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditTaskPage.xaml.cs",
+              "DocumentMoniker": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\EditTaskPage.xaml.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\Views\\EditTaskPage.xaml.cs",
+              "ToolTip": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\EditTaskPage.xaml.cs",
+              "RelativeToolTip": "TaskFlow\\Views\\EditTaskPage.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T10:10:12.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditTaskPage.xaml",
+              "DocumentMoniker": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\EditTaskPage.xaml",
+              "RelativeDocumentMoniker": "TaskFlow\\Views\\EditTaskPage.xaml",
+              "ToolTip": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\EditTaskPage.xaml",
+              "RelativeToolTip": "TaskFlow\\Views\\EditTaskPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-11T09:51:28.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\MauiProgram.cs",
+              "ToolTip": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\MauiProgram.cs",
+              "RelativeToolTip": "TaskFlow\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T12:24:58.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrashPage.xaml",
+              "DocumentMoniker": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\TrashPage.xaml",
+              "RelativeDocumentMoniker": "TaskFlow\\Views\\TrashPage.xaml",
+              "ToolTip": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Views\\TrashPage.xaml",
+              "RelativeToolTip": "TaskFlow\\Views\\TrashPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-05T16:24:14.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "icon.cs",
+              "DocumentMoniker": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Models\\icon.cs",
+              "RelativeDocumentMoniker": "TaskFlow\\Models\\icon.cs",
+              "ToolTip": "D:\\Project\\TaskFlow\\TaskFlow-app\\TaskFlow\\Models\\icon.cs",
+              "RelativeToolTip": "TaskFlow\\Models\\icon.cs",
+              "ViewState": "AgIAABcFAAAAAAAAACBjwAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T13:55:03.279Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

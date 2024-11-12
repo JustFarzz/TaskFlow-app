@@ -1,46 +1,222 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaskFlow.Views.ViewTaskPage"
-             Title="ViewTaskPage">
+             xmlns:models="clr-namespace:TaskFlow.Models"
+             x:Class="TaskFlow.Views.ViewTaskPage">
 
-    <StackLayout>
-        <Button Text="Create New Task" Clicked="OnCreateTaskClicked" />
-        <ListView x:Name="TasksListView" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame BorderColor="LightGray" CornerRadius="5" Padding="10" Margin="5">
-                            <StackLayout Orientation="Vertical" Spacing="5">
-                                
-                                <!-- judul di tasklist -->
-                                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium" />
-                                
-                                <!-- deskripsi di tasklist -->
-                                <Label Text="{Binding Description}" FontSize="Small" TextColor="Gray" />
-                                
-                                <!-- status di tasklist -->
-                                <Label Text="{Binding Status}" FontSize="Small" TextColor="Green" />
+    <Grid>
+        <!-- Kolom pertama untuk Sidebar, kolom kedua untuk konten utama -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <!-- Sidebar width -->
+            <ColumnDefinition Width="*" />
+            <!-- Main content width -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar dengan background gambar -->
+        <Grid Grid.Column="0" VerticalOptions="FillAndExpand">
+       
+            <!-- Background Image -->
+            <StackLayout HeightRequest="833" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Image Source="panel.jpg"
+                       Aspect="AspectFill"
+                       Opacity="0.4"
+                       Margin="0,0,0,0"
+                       HeightRequest="845"/>  
+            </StackLayout>
+            
+
+            <!-- Konten Sidebar -->
+
+            <StackLayout Background="Transparent" Padding="0" Grid.Column="0" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="100, 100, 100, 100" AbsoluteLayout.LayoutFlags="All" HeightRequest="825">
+
+                <Label Text="Navigation Menu" 
+                       FontFamily="NeueBebas"
+                       FontAttributes="Bold"
+                       FontSize="Medium"  
+                       TextColor="White"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Start"
+                       Margin="15,10,0,15"
+                       />
+
+                <!-- Menu Items -->
+                <StackLayout Padding="20,6,0,20">
+                    <!-- Tasks Menu -->
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Label FontFamily="FontAwesome"
+                               Text="{x:Static models:icon.TableList}"  
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,5,0"/>
+
+                        <Button Text="My Task" 
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="85"
+                                Padding="0,0,30,5"
+                                Clicked="ViewClicked"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Label FontFamily="FontAwesome"
+                               Text="{x:Static models:icon.FileCircleCheck}" 
+                               TextColor="White" 
+                               VerticalOptions="Center"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,5,0"/>
+
+                        <Button Text="Complete Task" 
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="133"
+                                Padding="0,0,30,5"
+                                Clicked="ViewCompleted"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Label FontFamily="FontAwesome"
+                               Text="{x:Static models:icon.FileCircleXmark}" 
+                               TextColor="White" 
+                               VerticalOptions="Center"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,5,0"/>
+
+                        <Button Text="Uncomplete Task" 
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="150"
+                                Padding="0,0,30,5"
+                                Clicked="ViewUncompleted"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Label FontFamily="FontAwesome"
+                               Text="{x:Static models:icon.Trash}" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               VerticalOptions="Center"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,5,0"/>
+
+                        <Button Text="Trash" 
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="75"
+                                Padding="0,0,30,5"
+                                Clicked="ViewTrash"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                        <Label FontFamily="FontAwesome"
+                               Text="{x:Static models:icon.Gear}" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               VerticalOptions="Center"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,5,0"/>
+
+                        <Button Text="Settings" 
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="90"
+                                Padding="0,0,30,5"
+                                />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+        <!-- Konten utama - Task List -->
+        <StackLayout Grid.Column="1" Padding="10" BackgroundColor="AliceBlue" HeightRequest="830" AbsoluteLayout.LayoutBounds="0.5, 100, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <!-- Search bar dan tombol "Create New Task" -->
+            <Grid Padding="10" HorizontalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
 
-                                <StackLayout Orientation="Horizontal" Spacing="10">
+                <SearchBar x:Name="TaskSearchBar"
+                           Placeholder="Search tasks..."
+                           TextColor="Black"
+                           TextChanged="OnSearchTextChanged"
+                           Grid.Column="0"
+                           BackgroundColor="White"
+                           PlaceholderColor="DarkGray"
+                           WidthRequest="350"
+                           Margin="0, 0, 175, 0"/>
 
-                                    <!-- tombol complete/uncomplete -->
-                                    <Button Text="Complete/Uncomplete" Clicked="OnCompleteClicked" />
-                                    
-                                    <!-- tombol edit -->
-                                    <Button Text="Edit" Clicked="OnEditClicked" />
-                                    
-                                    <!-- tombol delete -->
-                                    <Button Text="Delete" Clicked="OnDeleteClicked" />
+                <Button Text="Create New Task" 
+                        Clicked="OnCreateTaskClicked" 
+                        Grid.Column="1"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        HorizontalOptions="End" />
+            </Grid>
+
+            <!-- Daftar Tugas -->
+            <ListView x:Name="TasksListView" 
+                      HasUnevenRows="True"
+                      HorizontalOptions="FillAndExpand"
+                      ItemSelected="OnTaskSelected"
+                      ItemTapped="OnItemTapped"> <!--Mengubah Edit efisien-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="5" BackgroundColor="SandyBrown">
+                                <StackLayout Orientation="Vertical" Spacing="5">
+                                    <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium" TextColor="White"/>
+                                    <Label Text="{Binding Description}" FontSize="Small" TextColor="Gray" />
+
+                                    <!--Pengaturan Completed dan Uncompleted Color-->
+                                    <Label Text="{Binding Status}" FontSize="Small">
+                                        <Label.Style>
+                                            <Style TargetType="Label">
+                                                <Setter Property="TextColor" Value="Red" />
+                                                <Style.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="completed">
+                                                        <Setter Property="TextColor" Value="Green" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="uncompleted">
+                                                        <Setter Property="TextColor" Value="Red" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                    </Label>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <Frame BorderColor="White" CornerRadius="20" Padding="0">
+                                            <Button Text="Complete/Uncomplete" Clicked="OnCompleteClicked" BackgroundColor="SandyBrown" TextColor="White"/>
+                                        </Frame>
+
+                                        <Frame BorderColor="White" CornerRadius="20" Padding="0">
+                                            <Button Text="{x:Static models:icon.Trash}" FontFamily="FontAwesome" Clicked="OnDeleteClicked" BackgroundColor="SandyBrown" TextColor="White"/>
+                                        </Frame>
+                                    </StackLayout>
                                 </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Grid>
 </ContentPage>

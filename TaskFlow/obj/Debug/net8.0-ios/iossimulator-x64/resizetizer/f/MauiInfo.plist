@@ -4,6 +4,12 @@
 <dict>
   <key>UIAppFonts</key>
   <array>
+	<string>Bebas Neue Regular 400.ttf</string>
+	<string>BebasNeueRegular400.ttf</string>
+	<string>coolveticarg.otf</string>
+	<string>fa-brands-400.ttf</string>
+	<string>fa-solid-900.ttf</string>
+	<string>MovistarTextRegular.ttf</string>
 	<string>OpenSans-Regular.ttf</string>
 	<string>OpenSans-Semibold.ttf</string>
   </array>

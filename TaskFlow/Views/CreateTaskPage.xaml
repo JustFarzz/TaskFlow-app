@@ -7,7 +7,22 @@
     <StackLayout Padding="30" Spacing="10">
         <Entry x:Name="TitleEntry" Placeholder="Task Title" />
         <Editor x:Name="DescriptionEditor" Placeholder="Task Description" HeightRequest="100" />
-        <Button Text="Create" Clicked="OnCreateClicked" />
+
+        <Picker x:Name="CategoryPicker" Title="Select Category" WidthRequest="350" HorizontalOptions="Start" TextColor="White">
+        </Picker>
+
+
+        <Entry x:Name="LinkEntry" Placeholder="Add Link (optional)" WidthRequest="350" Keyboard="Url" HorizontalOptions="StartAndExpand"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+            <Button Text="Attach File" WidthRequest="100" BackgroundColor="Gray" TextColor="White"/>
+            <Label Text="No file selected" x:Name="AttachmentLabel" VerticalOptions="Center" Margin="10,0,0,0"/>
+        </StackLayout>
+
+        <Label Text="Deadline" />
+        <DatePicker x:Name="DeadlinePicker" WidthRequest="350" HorizontalOptions="StartAndExpand" />
+
+        <Button Text="Create" Clicked="OnCreateClicked" BackgroundColor="White" WidthRequest="500" CornerRadius="18" />
     </StackLayout>
-    
+
 </ContentPage>
